@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import './styles/styles.scss'
+import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
+import Header from "./components/Header/Header.jsx";
+import { BrowserRouter } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cocktails, setCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+
+  useEffect(() => {
+    async function fetchCocktails() {
+      const stored = localStorage.getItem("cocktails");
+      if (stored) {
+        setCocktails(JSON.parse(stored));
+        setLoading(false);
+        return;
+      }
+
+      let allCocktails = [];
+      for (let letter of letters) {
+        const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`);
+        const data = await res.json();
+        if (data.drinks) allCocktails = [...allCocktails, ...data.drinks];
+      }
+
+      localStorage.setItem("cocktails", JSON.stringify(allCocktails));
+      setCocktails(allCocktails);
+      setLoading(false);
+    }
+
+    fetchCocktails();
+  }, []);
+
+  if (loading) return <p>Cargando cócteles...</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter> 
+      <Header />
+      <CocktailList cocktails={cocktails} />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
