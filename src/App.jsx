@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import './styles/styles.scss'
 import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
+import Header from "./components/Header/Header.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 
 function App() {
@@ -35,9 +37,10 @@ function App() {
   if (loading) return <p>Cargando cócteles...</p>;
 
   return (
-    <div>
-     <CocktailList cocktails={cocktails} />
-    </div>
+    <BrowserRouter> 
+      <Header />
+      <CocktailList cocktails={cocktails} />
+    </BrowserRouter>
   );
 }
 
