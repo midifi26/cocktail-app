@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import './styles/styles.scss'
 import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
+
 
 function App() {
   const [cocktails, setCocktails] = useState([]);

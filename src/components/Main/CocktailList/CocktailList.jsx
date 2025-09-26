@@ -9,7 +9,7 @@ const CocktailList = ({cocktails}) => {
     a.strDrink.localeCompare(b.strDrink)
   );
   return (
-    <div>
+    <div className="cocktail-list">
      {sortedCocktails.map((cocktail) => (
         <CocktailCard key={cocktail.strDrink} cocktail={cocktail} />
       ))}
