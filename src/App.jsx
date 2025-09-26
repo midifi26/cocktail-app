@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
 
 function App() {
   const [cocktails, setCocktails] = useState([]);
@@ -33,10 +34,7 @@ function App() {
 
   return (
     <div>
-      <h1>Total cócteles: {cocktails.length}</h1>
-      <ul>
-        {cocktails.map(c => <li key={c.idDrink}>{c.strDrink}</li>)}
-      </ul>
+     <CocktailList cocktails={cocktails} />
     </div>
   );
 }
