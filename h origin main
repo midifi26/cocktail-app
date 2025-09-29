@@ -1,0 +1,27 @@
+*   [33m5dd3e20[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #5 from midifi26/navBar
+[31m|[m[32m\[m  
+[31m|[m * [33m75d6efe[m[33m ([m[1;31morigin/navBar[m[33m, [m[1;32mnavBar[m[33m)[m feat: Estructura inicial del Navbar
+[31m|[m *   [33m18b6e64[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m Merge pull request #4 from midifi26/estiloSaSS
+[31m|[m [33m|[m[34m\[m  
+[31m|[m [33m|[m * [33m134dd71[m[33m ([m[1;31morigin/estiloSaSS[m[33m, [m[1;32mestiloSaSS[m[33m)[m Integracion de Sass en el proyecto
+[31m|[m [33m|[m[33m/[m  
+[31m|[m *   [33m2aed07c[m Merge pull request #3 from midifi26/homePage
+[31m|[m [35m|[m[36m\[m  
+[31m|[m [35m|[m * [33me312e68[m[33m ([m[1;31morigin/homePage[m[33m, [m[1;32mhomePage[m[33m)[m Conectar estado de App con CocktailList y CocktailCard para mostrar cócteles
+[31m|[m [35m|[m[35m/[m  
+[31m|[m *   [33m625dacf[m Merge pull request #2 from midifi26/renderCock
+[31m|[m [1;31m|[m[1;32m\[m  
+[31m|[m [1;31m|[m * [33mcb1f4aa[m[33m ([m[1;31morigin/renderCock[m[33m, [m[1;32mrenderCock[m[33m)[m Carga inicial de Cócteles desde API
+[31m|[m [1;31m|[m[1;31m/[m  
+[31m|[m * [33ma2d43b0[m Preparado para producción
+[31m|[m *   [33m6e3f101[m Merge pull request #1 from midifi26/components
+[31m|[m [1;33m|[m[1;34m\[m  
+[31m|[m [1;33m|[m *   [33m8ef80d8[m[33m ([m[1;31morigin/components[m[33m)[m Merge branch 'develop' into components
+[31m|[m [1;33m|[m [1;35m|[m[1;33m\[m  
+[31m|[m [1;33m|[m [1;35m|[m[1;33m/[m  
+[31m|[m [1;33m|[m[1;33m/[m[1;35m|[m   
+[31m|[m * [1;35m|[m [33m903d6fc[m Cambios en develop
+[31m|[m[31m/[m [1;35m/[m  
+[31m|[m * [33m4985534[m[33m ([m[1;32mcomponents[m[33m)[m Estructura de componentes
+[31m|[m[31m/[m  
+* [33m9299167[m Primer commit
