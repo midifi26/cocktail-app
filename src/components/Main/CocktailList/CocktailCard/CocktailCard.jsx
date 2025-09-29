@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const CocktailCard = ({cocktail}) => {
   if (!cocktail) return null;
   return <article className="cocktail-card">
