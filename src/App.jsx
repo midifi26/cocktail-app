@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import './styles/styles.scss'
 import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
+import CocktailDetails from "./components/Main/CocktailDetails/CocktailDetails.jsx";
 import Header from "./components/Header/Header.jsx";
-import { BrowserRouter } from "react-router-dom";
+
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -36,11 +38,17 @@ function App() {
 
   if (loading) return <p>Cargando cócteles...</p>;
 
-  return (
-    <BrowserRouter> 
+  return(
+    <>
       <Header />
-      <CocktailList cocktails={cocktails} />
-    </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CocktailList cocktails={cocktails} />} />
+        <Route
+          path="/cocktail/:id"
+          element={<CocktailDetails cocktails={cocktails} />}
+        />
+      </Routes>
+    </>
   );
 }
 
