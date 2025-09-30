@@ -18,18 +18,23 @@ const CocktailDetails = ({ cocktails }) => {
 
   return (
     <div className="cocktail-details">
-      <button onClick={() => navigate(-1)}>Volver</button>
-      <h1>{cocktail.strDrink}</h1>
+      
+      
       <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-      <p><strong>Tipo:</strong> {cocktail.strAlcoholic}</p>
-      <h3>Ingredientes:</h3>
-      <ul>
-        {ingredients.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      <h3>Instrucciones:</h3>
-      <p>{cocktail.strInstructions}</p>
+
+      <div className="cocktail-info">
+        <h1>{cocktail.strDrink}</h1>
+        <p><strong>Tipo:</strong> {cocktail.strAlcoholic}</p>
+        <h3>Ingredientes:</h3>
+        <ul>
+          {ingredients.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <h3>Instrucciones:</h3>
+        <p>{cocktail.strInstructions}</p>
+        <button onClick={() => navigate(-1)}>Volver</button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,42 @@
+@use '../utils/variables.scss' as variables;
+
+.cocktail-details {
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column; // 👉 en móvil: imagen arriba, texto abajo
+  align-items: center;
+  gap: 20px; // espacio entre imagen y texto
+
+  h2 {
+    font-size: 2rem;
+    color: variables.$dark-green;
+    margin-bottom: 15px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px; // no dejar que se estire demasiado
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  // 👉 a partir de 768px (tablet/ordenador pequeño)
+  @media (min-width: 768px) {
+    max-width: 1200px; // usar casi todo el ancho de la pantalla
+    flex-direction: row; // ahora en fila
+    align-items: flex-start;
+
+    img {
+      flex: 1; // la imagen ocupa un lado
+      margin-bottom: 0; // quitamos margen porque ya está al lado
+    }
+
+    .cocktail-info {
+      flex: 2; // el texto ocupa más espacio que la imagen
+      padding-left: 20px;
+    }
+  }
+}
