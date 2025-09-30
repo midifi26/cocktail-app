@@ -1,5 +1,5 @@
 import React from "react";
-import logoIcon from '../../../assets/DrinkUPIcon(1).png';
+import logoIcon from '../../../assets/DrinkUPIcon(2).png';
 import logoFull from '../../../assets/DrinkUP.png';
 
 const Logo = ({isScrolled}) => {

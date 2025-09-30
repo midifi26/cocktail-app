@@ -1,4 +1,4 @@
-@import '../utils/variables.scss';
+@use '../utils/variables.scss' as variables;
 
 .cocktail-card{
     display : flex;
@@ -8,7 +8,7 @@
 
 .cocktail-card h2 {
     font-size: 1.5rem;
-    color: $dark-green;
+    color: variables.$dark-green;
     margin-bottom: 10px;
 }
 

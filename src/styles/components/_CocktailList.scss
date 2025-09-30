@@ -1,10 +1,16 @@
+@use '../utils/variables.scss' as variables;
+
 .cocktail-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  background-color: #f5f5f5; // un fondo suave
+  padding-top: calc(20px + 80px);
+  background-color: variables.$lavender-web;
+  width: 100%;
+  box-sizing: border-box;
+  
 }
 
 .cocktail-list ul {
@@ -16,4 +22,11 @@
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 10px;
+}
+
+ @media (min-width: 600px) { // escritorio
+
+  .cocktail-list {
+    padding-top: 100px; // header más alto
+  }
 }

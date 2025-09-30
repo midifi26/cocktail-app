@@ -1,0 +1,17 @@
+@use '../utils/variables.scss' as variables;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;  // ajusta si cambia en desktop
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  background-color: variables.$lavender-web;
+}
+
+

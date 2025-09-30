@@ -1,0 +1,23 @@
+@use '../utils/variables.scss' as variables;
+
+.logo {
+  text-align: center;
+  transition: all 0.3s ease;
+
+  .logo-full {
+    font-size: 2rem;    // Tamaño del texto DrinkUP
+    color: green;       // El color del texto
+    display: flex;      // Texto e imagen en línea
+    align-items: center;
+    gap: 10px;          // Espacio entre el texto y la imagen
+
+    img {
+      width: 40px;      // Tamaño pequeño del icono
+    }
+  }
+
+  .logo-icon {
+    width: 120px;       // Tamaño más grande cuando solo hay imagen
+  }
+}
+

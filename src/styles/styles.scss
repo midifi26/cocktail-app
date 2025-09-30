@@ -1,5 +1,9 @@
-// @use './views/App';
+@use './views/App';
 @use './utils/variables.scss';
 @use './components/Main';
 @use './components/CocktailList';
 @use './components/CocktailCard';
+@use './components/CocktailDetails';
+@use './components/Header';
+@use './components/Logo';
+//@use './components/Navbar';

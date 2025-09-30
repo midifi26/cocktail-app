@@ -1,8 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import React from "react";
 import CocktailList from "./CocktailList";
-import CocktailDetails from "./CocktailDetails";
 
-<Routes>
-  <Route path="/" element={<CocktailList cocktails={cocktails} />} />
-  <Route path="/cocktail/:id" element={<CocktailDetails cocktails={cocktails} />} />
-</Routes>
+const Main = ({ cocktails }) => {
+  return (
+    <main className="main">
+      <CocktailList cocktails={cocktails} />
+    </main>
+  );
+};
+
+export default Main;
