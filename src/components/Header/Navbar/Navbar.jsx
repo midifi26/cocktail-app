@@ -1,15 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  return <section className="navbar">
-    <article>
-      <Link to="/">Inicio</Link>
-    </article>
-    <article>
-      <Link to="/favoritos">Favoritos</Link>
-    </article>
-  </section>;
+const Navbar = ({ onResetSearch }) => {
+  const navigate = useNavigate();
+
+  const handleInicio = () => {
+    onResetSearch();
+    navigate("/");
+  };
+
+  return (
+    <section className="navbar">
+      <article>
+        <button onClick={handleInicio}>Inicio</button>
+      </article>
+      <article>
+        <Link to="/favoritos">Favoritos</Link>
+      </article>
+    </section>
+  );
 };
 
 export default Navbar;

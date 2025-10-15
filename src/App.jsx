@@ -3,6 +3,7 @@ import './styles/styles.scss'
 import CocktailList from "./components/Main/CocktailList/CocktailList.jsx";
 import CocktailDetails from "./components/Main/CocktailDetails/CocktailDetails.jsx";
 import Header from "./components/Header/Header.jsx";
+import Navbar from "./components/Header/Navbar/Navbar.jsx";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -49,9 +50,10 @@ const filteredCocktails = cocktails.filter(cocktail =>
 
   return(
     <>
-      <Header onSearch={handleSearch} />
+      <Header onSearch={handleSearch} onResetSearch={() => setSearchTerm("")} />
+
       <Routes>
-        <Route path="/" element={<CocktailList cocktails={filteredCocktails} />} />
+        <Route path="/" element={<CocktailList cocktails={filteredCocktails} searchTerm={searchTerm}/>} />
         <Route path="/cocktail/:id" element={<CocktailDetails cocktails={cocktails} />}/>
       </Routes>
     </>

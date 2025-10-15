@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import SearchBar from './SearchBar/SearchBar';
 
-const Header = ({onSearch}) => {
+const Header = ({onSearch, onResetSearch}) => {
     const [isScrolled, setIsScrolled] = useState(false);
     
   useEffect(() => {
@@ -29,7 +29,7 @@ const Header = ({onSearch}) => {
   return <div className="header">
     <Logo isScrolled={isScrolled} />
     <SearchBar onSearch={onSearch} />
-    <Navbar />
+    <Navbar onResetSearch={onResetSearch} />
 
   </div>;
 };
