@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import SearchBar from './SearchBar/SearchBar';
 
-const Header = () => {
+const Header = ({onSearch}) => {
     const [isScrolled, setIsScrolled] = useState(false);
-
+    
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -27,6 +28,7 @@ const Header = () => {
 
   return <div className="header">
     <Logo isScrolled={isScrolled} />
+    <SearchBar onSearch={onSearch} />
     <Navbar />
 
   </div>;

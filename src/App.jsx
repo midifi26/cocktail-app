@@ -11,6 +11,14 @@ function App() {
   const [cocktails, setCocktails] = useState([]);
   const [loading, setLoading] = useState(true);
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = (term) => {
+  setSearchTerm(term);
+};
+
+const filteredCocktails = cocktails.filter(cocktail =>
+  cocktail.strDrink.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   useEffect(() => {
     async function fetchCocktails() {
@@ -35,18 +43,16 @@ function App() {
 
     fetchCocktails();
   }, []);
+  
 
   if (loading) return <p>Cargando cócteles...</p>;
 
   return(
     <>
-      <Header />
+      <Header onSearch={handleSearch} />
       <Routes>
-        <Route path="/" element={<CocktailList cocktails={cocktails} />} />
-        <Route
-          path="/cocktail/:id"
-          element={<CocktailDetails cocktails={cocktails} />}
-        />
+        <Route path="/" element={<CocktailList cocktails={filteredCocktails} />} />
+        <Route path="/cocktail/:id" element={<CocktailDetails cocktails={cocktails} />}/>
       </Routes>
     </>
   );
